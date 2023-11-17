@@ -1,0 +1,60 @@
+1  La minishell tiene que mostrar una entrada, una especie de banner de inicio y quedarse a la espera para recibir comandos.
+
+2 Tendra que tener historial funcional, entiendo que si hay que hacerlo como bash se abren dos lineas:
+	- primero, si subes o bajas mediante las flechas, tendras que recorrer los comandos que se han ido usando.
+	- segundo, si escribes el principio de algún comando que has usado, el historial tendra que desplazarse por los comando que usaras con ese principio
+	- tercero y quiza para nota ; al cerrarse la terminal trendra que guardar los comandos que se usaran en cada ejecución para recordarlos a lo largo del tiempo (?)
+
+3 En cuanto a los ejecutables tendra que aceptar rutas absolutas y relativas
+	- Añadirle un path y/o un envyroment
+
+4 Esto no termino de entenderlo ahora mismo;
+		Evita utilizar más de una variable global para indicar la recepción de una señal.
+		Piensa en lo que implica: Esta aproximación evita que tu gestor de señales acceda
+		a tus estructuras de datos principales.
+
+		¡Cuidado!. Esta variable global no puede proporcionar ninguna otra
+		información o datos que el número de una señal recibida. Por lo tanto
+		está prohibido utilizar estructuras de tipo “norm” en global.
+
+5 No interpretar comillas sin cerrar o caracteres especiales no especificados en el enunciado como \ (barra invertida) o ; (punto y coma).
+	- Esto quiere decir que si tiene que aceptar las comillas dobles y las comillas simples ¿Estas funcionan distinto?
+
+6 Gestionar que la ’ evite que el shell interprete los metacaracteres en la secuencia
+entrecomillada.
+
+7 Gestionar que la " evite que el shell interprete los metacaracteres en la secuencia
+entrecomillada exceptuando $ (signo de dólar).
+
+8  Implementar redirecciones:
+	- < debe redirigir input
+	- > debe redirigir output
+	- “<<” debe recibir un delimitador, después leer del input de la fuente actual hasta que una línea que contenga ssolo el delimitador aparezca. Sin embargo,
+no necesita actualizar el historial.
+			- Entiendo que mientras estas dentro del HereDock pero fuera si actualiza el historial.
+	- “>>” debe redirigir el output en modo append.
+
+9 Implementar pipes
+
+10 Gestionar las variables de entorno ($ seguidos de caracteres) que deberán expandirse a sus valores.
+
+11 Gestionar $?, que deberá expandirse al estado de salida del comando más reciente ejecutado en la pipeline.
+
+12 Gestionar ctrl-C ctrl-D ctrl-\, que deberán funcionar como en bash.
+		◦ ctrl-C imprime una nueva entrada en una línea nueva.
+		◦ ctrl-D termina el shell.
+		◦ ctrl-\ no hace nada.
+
+13 Deberá implementar los built-ins:
+		◦ echo con la opción -n.
+		◦ cd solo con una ruta relativa o absoluta.
+		◦ pwd sin opciones.
+		◦ export sin opciones.
+		◦unset sin opciones.
+		◦ env sin opciones o argumentos.
+		◦ exit sin opciones.
+
+		NOTA:
+
+		La función readline puede producir algunos leaks que no necesitas arreglar. Eso no
+significa que tu código, sí, el código que has escrito, pueda producir leaks.
