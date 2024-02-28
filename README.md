@@ -26,7 +26,7 @@ Esta función se utiliza para indicar a Readline que el cursor ha cambiado a una
 
 
 ## add_history ##
-
+Añade una linea al historial.
 
 
 #### Libreria ####
