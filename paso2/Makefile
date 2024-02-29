@@ -12,11 +12,19 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CCLANG = -lreadline
 
-SOURCE = main.c utils.c easter_eggs.c
+SOURCE = main.c utils2.c protect.c \
+		 simple_children.c \
+		 lib_utils/ft_strncmp.c \
+		 lib_utils/ft_strlen.c \
+		 lib_utils/ft_split.c \
+		 lib_utils/ft_strjoin.c \
+		 lib_utils/ft_substr.c \
+		 lib_utils/ft_strdup.c \
+		 lib_utils/ft_strnstr.c \
 
 %.o: %.c
 				@echo "${BLUE} ◎ $(YELLOW)Compiling   ${RED}→   $(GREEN)$< $(DEF_COLOR)"
-#	$(CFLAGS) -------->lo he sacado de la linea de abajo
+#	$(CFLAGS) -------->lo he sacado de la linea de abajo para hacer pruebas, pero no se esta usando ahora mismo 
 				@${CC} -c $< -o $@
 
 
@@ -25,7 +33,7 @@ OBJS = ${SOURCE:.c=.o}
 all: ${NAME}
 	
 ${NAME}: ${OBJS}
-#	$(CFLAGS) -------->lo he sacado de la linea de abajo
+#	$(CFLAGS) -------->lo he sacado de la linea de abajo para hacer pruebas, pero no se esta usando ahora mismo 
 				@$(CC) $(OBJS) -o $(NAME) ${CCLANG}
 				@echo "\n$(GREEN) Created $(NAME) ✓$(DEF_COLOR)\n" 
 				@echo "    _       _       _" | lolcat
