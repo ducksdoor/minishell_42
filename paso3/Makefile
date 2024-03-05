@@ -12,7 +12,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CCLANG = -lreadline
 
-SOURCE = main.c utils2.c protect.c\
+SOURCE = main.c utils2.c protect.c avance.c\
 		 simple_children.c \
 		 lib_utils/ft_strncmp.c \
 		 lib_utils/ft_strlen.c \
@@ -21,6 +21,9 @@ SOURCE = main.c utils2.c protect.c\
 		 lib_utils/ft_substr.c \
 		 lib_utils/ft_strdup.c \
 		 lib_utils/ft_strnstr.c \
+		 lib_utils/ft_lstnew.c \
+		 lib_utils/ft_lstlast.c \
+		 lib_utils/ft_lstaddback.c \
 
 %.o: %.c
 				@echo "${BLUE} ◎ $(YELLOW)Compiling   ${RED}→   $(GREEN)$< $(DEF_COLOR)"

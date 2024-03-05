@@ -1,0 +1,52 @@
+TO DO de cosas que me voy dando cuenta :
+
+
+---> que funcione exit 
+---> que funcionen comandos como cd que no esta funcionando ...
+---> historial
+---> aceptar mas de un comandos
+
+
+TO DO REAL 
+
+---> El shell funcionará solo en modo interactivo (sin scripts, es decir, el ejecutable no toma argumentos).
+
+
+---> Tener un historial de comandos funcional (puedes navegar a través de los comandos con las flechas arriba/abajo).
+
+---> Implementar tuberías (|)
+
+---> Implementar redirecciones (<, >, >>).
+
+---> Implementar el here-doc (<<).
+
+---> Manejar comillas dobles ("") y simples (''), que deben escapar caracteres especiales, además de $ para comillas dobles.
+
+---> Manejar variables de entorno ($ seguido de una secuencia de caracteres).
+
+---> Manejar señales como en bash (ctrl + C, ctrl + , ctrl + D).
+
+---> Implementar los siguientes built-ins (comandos internos):
+— echo (solo con la opción -n)
+— exit
+— env (sin opciones o argumentos)
+— export (sin opciones)
+— unset (sin opciones)
+— cd
+— pwd
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> Ejecutar comandos simples con rutas absolutas o relativas (por ejemplo, /bin/ls, ../bin/ls).   (√)
+
+---> Ejecutar comandos simples sin una ruta especificada (por ejemplo, ls, cat, grep, etc.). (√)
