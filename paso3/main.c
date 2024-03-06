@@ -33,26 +33,27 @@ void	main_loop(char **env)
 {
 	char	*line;
 	t_list	*lst_token;
-	int		x;
 	pid_t	pid1;
+	int		x;
 
 	while (1)
 	{
-		x = 0;
 		line = readline("\033[1;34mminishell \033[0m ▸ ");
 		if (line != NULL)
 		{
+			x = 0;
 			lst_token = new_token(line);
 			while (lst_token->next != NULL)
 			{
+				printf("%d\n", x);
+				x++;
 				pid1 = fork();
 				simple_children(lst_token->content, env, pid1);
 				waitpid(pid1, NULL, 0);
-				x++;
+				printf("prueba de cambio de next, paso1 %s\n", lst_token->content);
 				lst_token = lst_token->next;
+				printf("prueba de cambio de next, paso2 %s\n", lst_token->content);
 			}
-/* 			no se esta haciendo el ultimo comando, o el primero en caso de que sea uno solo
-			simple_children(lst_token->content, env, pid1); */
 			free (line);
 		}
 	}

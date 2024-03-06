@@ -12,7 +12,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CCLANG = -lreadline
 
-SOURCE = main.c utils2.c protect.c avance.c\
+SOURCE = main.c utils2.c protect.c tokenizar.c\
 		 simple_children.c \
 		 lib_utils/ft_strncmp.c \
 		 lib_utils/ft_strlen.c \

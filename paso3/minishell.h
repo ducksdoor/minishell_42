@@ -39,8 +39,7 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
-
-char	**tokenpipex(char *line);
+t_list	*new_token_pipex(char *line);
 t_list	*new_token(char *line);
-void	show_token(char **token);
+void	direction(t_list **lst_token);
 #endif
