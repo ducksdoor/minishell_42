@@ -85,7 +85,14 @@ void	ft_exe(char *command, char **envp)
 		if (!finish)
 			ft_error("ruta comando");
 	}
-	execve(finish, cmd, envp);
+	if (!ft_strncmp(cmd[0], "cd", 2))
+	{
+		printf("path: %s\n", cmd[1]);
+		chdir(cmd[1]);
+	}
+	else
+		execve(finish, cmd, envp);
+	printf("prb\n");
 	perror(command);
 	exit(errno);
 }
