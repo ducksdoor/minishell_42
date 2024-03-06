@@ -38,7 +38,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+int		ft_strchr(char *s, int c);
 
+int		last_char(char *line);
 t_list	*new_token_pipex(char *line);
 t_list	*new_token(char *line);
 void	direction(t_list **lst_token);

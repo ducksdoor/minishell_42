@@ -14,6 +14,8 @@ CCLANG = -lreadline
 
 SOURCE = main.c utils2.c protect.c tokenizar.c\
 		 simple_children.c \
+		 lib_utils/ft_strchr.c \
+		 lib_utils/last_char.c \
 		 lib_utils/ft_strncmp.c \
 		 lib_utils/ft_strlen.c \
 		 lib_utils/ft_split.c \
