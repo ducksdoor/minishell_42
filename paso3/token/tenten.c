@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   protect.c                                          :+:      :+:    :+:   */
+/*   tenten.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,43 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
-char	**ft_protsplit(char *str, char c)
+static void	comillas(t_list **aux, char **new_modulo)
 {
-	char	**result;
+	t_list	*aux_aux;
+	t_list	*new_nod;
+	t_list	*last_aux;
+	char	*char_aux;
 
-	result = ft_split(str, c);
-	if (!result)
-		ft_error("split");
-	return (result);
+	aux_aux = *aux;
+	last_aux = (*aux)->next;
+	char_aux = ft_strjoin("\n", new_modulo[0]);
+	char_aux = ft_strjoin(char_aux, "\n");
+	aux_aux->content = char_aux;
+	ft_lstadd_back(&aux_aux, last_aux);
 }
 
-char	*ft_protstrjoin(char *s1, char *s2)
+void	tenten(t_list **lst_token)
 {
-	char	*result;
+	t_list	*aux;
+	char	*char_aux;
+	char	**nuevo_modulo;
 
-	result = ft_strjoin(s1, s2);
-	if (!result)
-		ft_error("strjoin");
-	return (result);
-}
-
-int	protect_loop(int fd, char *line, char *argv)
-{
-	int	x;
-
-	x = 1;
-	if (ft_strncmp(line, argv, ft_strlen(argv)) == 0
-		&& ft_strlen(line) - 1 == ft_strlen(argv))
-		x = 0;
-	if (x == 1)
-		write(fd, line, ft_strlen(line));
-	return (x);
-}
-
-void	ft_error(char *texto)
-{
-	perror(texto);
-	exit(errno);
+	aux = *lst_token;
+	while (aux != NULL)
+	{
+		char_aux = aux->content;
+		if (ft_strchrplus(char_aux, "\"") == 1)
+		nuevo_modulo = ft_protsplit(char_aux, '\"');
+		comillas(&aux, nuevo_modulo);
+		aux = aux->next;
+	}
 }

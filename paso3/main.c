@@ -50,9 +50,7 @@ void	main_loop(char **env)
 				pid1 = fork();
 				simple_children(lst_token->content, env, pid1);
 				waitpid(pid1, NULL, 0);
-				printf("prueba de cambio de next, paso1 %s\n", lst_token->content);
 				lst_token = lst_token->next;
-				printf("prueba de cambio de next, paso2 %s\n", lst_token->content);
 			}
 			free (line);
 		}

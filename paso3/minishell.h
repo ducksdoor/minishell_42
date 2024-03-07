@@ -32,6 +32,7 @@ int		ft_strlen(char *s);
 char	*ft_substr(char *s, int start, int len);
 char	*ft_strdup(char *src);
 char	**ft_split(char const *s, char c);
+char	**ft_split_plus(char const *s, char *c);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strncmp(char *s1, char *s2, int n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -39,9 +40,17 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_strchr(char *s, int c);
+int		ft_strchrplus(char *s, char *c);
+int		ft_strchrplusplus(char *s, char *c);
+char	*ft_strtrim(char *s1, char *set);
 
 int		last_char(char *line);
 t_list	*new_token_pipex(char *line);
 t_list	*new_token(char *line);
-void	direction(t_list **lst_token);
+void	simply_direction(t_list **lst_token);
+void	double_direction(t_list **lst_token);
+void	redirect(t_list **aux, char **new_modulo, char *symbol);
+void	tenten(t_list **lst_token);
+
+void	show(t_list *list);
 #endif

@@ -1,30 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strchrplus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <lortega-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 11:05:39 by lortega-          #+#    #+#             */
-/*   Updated: 2023/04/06 13:36:02 by lortega-         ###   ########.fr       */
+/*   Created: 2023/03/10 15:26:34 by lortega-          #+#    #+#             */
+/*   Updated: 2023/03/16 08:48:51 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	ft_strncmp(char *s1, char *s2, int n)
+int	ft_strchrplus(char *s, char *c)
 {
-	int	x;
-	int	dif;
+	int		x;
+	int		y;
 
 	x = 0;
-	dif = 0;
-	while ((x < n) && !dif && (s1[x] != '\0') && (s2[x] != '\0'))
+	y = ft_strlen(s);
+	while (x <= y)
 	{
-		dif = (unsigned char)s1[x] - (unsigned char)s2[x];
-		x++;
+		if (s[x] == c[0])
+		{
+			if (s[x + 1] == c[1])
+				return (1);
+		}
+		++x;
 	}
-	if (x < n && !dif && (s1[x] == '\0' || s2 [x] == '\0'))
-		dif = (unsigned char)s1[x] - (unsigned char)s2[x];
-	return (dif);
+	return (0);
+}
+
+int	ft_strchrplusplus(char *s, char *c)
+{
+	int		x;
+	int		y;
+
+	x = 0;
+	y = ft_strlen(s);
+	while (x <= y)
+	{
+		if (s[x] == c[0])
+		{
+			if (s[x + 1] == c[1])
+			{
+				if (s[x + 2] == c[2])
+					return (1);
+			}
+		}
+		++x;
+	}
+	return (0);
 }

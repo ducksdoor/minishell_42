@@ -12,8 +12,12 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CCLANG = -lreadline
 
-SOURCE = main.c utils2.c protect.c tokenizar.c\
+SOURCE = main.c utils2.c \
 		 simple_children.c \
+		 token/tokenizar.c\
+		 token/redirect.c \
+		 token/tenten.c \
+		 lib_utils/protect.c \
 		 lib_utils/ft_strchr.c \
 		 lib_utils/last_char.c \
 		 lib_utils/ft_strncmp.c \
@@ -26,6 +30,9 @@ SOURCE = main.c utils2.c protect.c tokenizar.c\
 		 lib_utils/ft_lstnew.c \
 		 lib_utils/ft_lstlast.c \
 		 lib_utils/ft_lstaddback.c \
+		 lib_utils/ft_strtrim.c \
+		 lib_utils/ft_strchrplus.c \
+		 show.c \
 
 %.o: %.c
 				@echo "${BLUE} ◎ $(YELLOW)Compiling   ${RED}→   $(GREEN)$< $(DEF_COLOR)"
