@@ -1,3 +1,14 @@
+comunicacion interna : 
+
+como van los tokens? 
+
+redirecciones -->>> iran pegadas al siguiente elemento, tipo >ls  ó <<txt
+comillas     --->>> Todo el texto de dentro de las comillas con las comillas
+pipex         -->>> el simbolo de | solo
+
+
+
+
 
 Lista de pasos realizados para hacer la minishell:
 

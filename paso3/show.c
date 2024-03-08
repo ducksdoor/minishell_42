@@ -8,11 +8,12 @@ void	show(t_list *list)
 
 	x = 0;
 	printf("----principio de show----\n");
-	while (list)
+	while (list->next)
 	{
 		printf("nodo %d, => %s\n", x, list->content);
 		list = list->next;
 		x++;
 	}
+	printf("nodo %d, => %s\n", x, list->content);
 	printf("----fin de show-----\n");
 }

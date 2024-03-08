@@ -16,7 +16,7 @@ SOURCE = main.c utils2.c \
 		 simple_children.c \
 		 token/tokenizar.c\
 		 token/redirect.c \
-		 token/tenten.c \
+		 token/new_token_list.c \
 		 lib_utils/protect.c \
 		 lib_utils/ft_strchr.c \
 		 lib_utils/last_char.c \
@@ -32,7 +32,9 @@ SOURCE = main.c utils2.c \
 		 lib_utils/ft_lstaddback.c \
 		 lib_utils/ft_strtrim.c \
 		 lib_utils/ft_strchrplus.c \
+		 lib_utils/ft_compare_last_char.c \
 		 show.c \
+#token/tenten.c \
 
 %.o: %.c
 				@echo "${BLUE} ◎ $(YELLOW)Compiling   ${RED}→   $(GREEN)$< $(DEF_COLOR)"

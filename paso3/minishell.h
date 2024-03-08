@@ -43,7 +43,9 @@ int		ft_strchr(char *s, int c);
 int		ft_strchrplus(char *s, char *c);
 int		ft_strchrplusplus(char *s, char *c);
 char	*ft_strtrim(char *s1, char *set);
+int		ft_compare_last_char( char *s, int c);
 
+t_list	*pre_list(char *line);
 int		last_char(char *line);
 t_list	*new_token_pipex(char *line);
 t_list	*new_token(char *line);

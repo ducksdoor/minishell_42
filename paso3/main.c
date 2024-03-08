@@ -43,14 +43,17 @@ void	main_loop(char **env)
 		{
 			x = 0;
 			lst_token = new_token(line);
-			while (lst_token->next != NULL)
+			if (lst_token)
 			{
-				printf("%d\n", x);
-				x++;
-				pid1 = fork();
-				simple_children(lst_token->content, env, pid1);
-				waitpid(pid1, NULL, 0);
-				lst_token = lst_token->next;
+				while (lst_token->next != NULL)
+				{
+					printf("%d\n", x);
+					x++;
+					pid1 = fork();
+					simple_children(lst_token->content, env, pid1);
+					waitpid(pid1, NULL, 0);
+					lst_token = lst_token->next;
+				}
 			}
 			free (line);
 		}

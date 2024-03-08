@@ -1,0 +1,16 @@
+Makefile
+lib_utils
+ls
+main.c
+main.o
+minishell
+minishell.h
+readmenotes.txt
+show.c
+show.o
+simple_children.c
+simple_children.o
+to_do
+token
+utils2.c
+utils2.o

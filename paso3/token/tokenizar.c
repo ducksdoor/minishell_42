@@ -43,16 +43,18 @@ t_list	*new_token_pipex(char *line)
 	return (lst_token);
 }
 /* 
+vamos a rectificar, empecemos por crear la lista sin espacios 
 directions tienen que ser los ultimos */
 t_list	*new_token(char *line)
 {
 	t_list	*lst_token;
 
-	lst_token = new_token_pipex(line);
-	//tenten(&lst_token);
+	lst_token = pre_list(line);
+/* 	lst_token = new_token_pipex(line);
+	tenten(&lst_token);
 	double_direction(&lst_token);
 	simply_direction(&lst_token);
-	printf("token final\n");
+	printf("token final\n"); */
 	show(lst_token);
 	return (lst_token);
 }
